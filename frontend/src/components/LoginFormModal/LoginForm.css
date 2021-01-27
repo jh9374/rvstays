@@ -1,0 +1,62 @@
+#modal-content{
+    background-color: rgb(38, 60, 106);
+    width: 35em;
+    height: 30em;
+}
+
+#modal-content form{
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.login_form{
+    font-size: 2em;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+}
+
+.login_form * {
+    padding: .5em 0;
+    box-sizing: border-box;
+}
+
+.login_errors{
+    font-size: .8em;
+    font-weight: bold;
+    margin: 1% 0;
+    list-style: none;
+    color: rgb(255, 154, 2);
+}
+
+.login_form label{
+    width: 100%;
+    display: inline-block;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.login_form h2{
+    margin: 2% 0 0 0;
+    text-align: center;
+}
+
+.login_form button{
+    display: block;
+    margin: 3% auto;
+    font-size: .9em;
+    width: 5em;
+}
+
+.login_inputs{
+    float: right;
+    width: 13em;
+}
+
+.login_form_signup a{
+    color: #ffffff;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+}

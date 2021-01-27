@@ -1,1 +1,81 @@
 /* TODO Add site wide styles */
+body{
+    margin: 0;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.hero-wrapper {
+    background: url("../src/images/airstream.jpg");
+    background-size: cover;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+}
+
+.wrapper {
+    
+}
+
+#nav_container {
+    height: 8vh;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    font-size: 2.5em;
+}
+
+li a:visited{
+    color: #ffffff;
+}
+
+.nav_ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    height: 100%;
+    position: relative;
+    top: -.5em;
+}
+
+.nav_ul_links{
+    width: 100%;
+}
+
+.nav_ul * {
+    text-decoration: none;
+    margin: 0 .6em;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.home_link{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    padding: 0;
+    float: left;    
+}
+
+.icon_image{
+    background: url(../src/images/rvstays_icon.001.png);
+    background-size: cover;
+    width: 6.4em;
+    margin: 0;
+}
+
+.icon_text{
+    margin: 0;
+    padding-top: 1.4em;
+    height: 60%;
+}
+
+.login_link, .signup_link{
+    padding: 0 .6em;
+    padding-top: 1.3em;
+    float: right;
+}
+
+
+
+

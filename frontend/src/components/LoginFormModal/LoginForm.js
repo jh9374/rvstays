@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom"
 
 function LoginForm() {
     const dispatch = useDispatch();
@@ -19,15 +20,20 @@ function LoginForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <ul>
+
+        <form className="login_form" onSubmit={handleSubmit}>
+            <h2>
+                Login
+            </h2>
+            <ul className="login_errors">
                 {errors.map((error, idx) => (
                     <li key={idx}>{error}</li>
                 ))}
             </ul>
             <label>
                 Username or Email
-        <input
+                <input
+                    className="login_inputs"
                     type="text"
                     value={credential}
                     onChange={(e) => setCredential(e.target.value)}
@@ -36,7 +42,8 @@ function LoginForm() {
             </label>
             <label>
                 Password
-        <input
+                <input
+                    className="login_inputs"
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -44,6 +51,9 @@ function LoginForm() {
                 />
             </label>
             <button type="submit">Log In</button>
+            <div className="login_form_signup">
+                <NavLink to="/signup">Need to sign up?</NavLink>
+            </div>
         </form>
     );
 }
