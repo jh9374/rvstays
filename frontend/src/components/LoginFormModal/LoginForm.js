@@ -51,9 +51,6 @@ function LoginForm() {
                 />
             </label>
             <button type="submit">Log In</button>
-            <div className="login_form_signup">
-                <NavLink to="/signup">Need to sign up?</NavLink>
-            </div>
         </form>
     );
 }

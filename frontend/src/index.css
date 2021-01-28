@@ -34,12 +34,14 @@ li a:visited{
     display: flex;
     list-style: none;
     height: 100%;
-    position: relative;
-    top: -.5em;
+    /* position: relative;
+    top: -.5em; */
 }
 
 .nav_ul_links{
     width: 100%;
+    position: relative;
+    top: -.5em;
 }
 
 .nav_ul * {

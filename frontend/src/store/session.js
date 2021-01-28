@@ -1,5 +1,6 @@
 import { fetch } from './csrf';
 
+//Setting up Reducer
 const initialState = { user: null};
 const sessionReducer = (state = initialState, action) => {
     let newState;
@@ -17,6 +18,7 @@ const sessionReducer = (state = initialState, action) => {
     }
 }
 
+//Setting up actions
 const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser'
 

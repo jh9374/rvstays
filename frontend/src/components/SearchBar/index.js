@@ -1,9 +1,32 @@
 import "./SearchBar.css"
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Redirect, useHistory } from "react-router-dom";
+import { getListings } from '../../store/listings';
+
 
 export default function SearchBar() {
-    return (
-        <div className="search_form_wrapper">
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const [ location, setLocation ] = useState('');
+    const [ checkIn, setCheckIn ] = useState('');
+    const [ checkOut, setCheckOut ] = useState('');
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        //set dispatch to retrieve listings based on location
+        // and on availability
+        let res = dispatch(getListings())
+        console.log(res)
+        // if(!location && !checkIn && !checkOut){
+            
+        //     // return history.push("/listings")
+        // }
+        
+    }
+    return (
+        <div className="search_form_wrapper" onSubmit={handleSubmit}>
+            {document.getElementById("root").classList.add("hero-wrapper")}
             <div className="banner_text_wrapper">
                 <h2 className="banner_text">
                     Where do you want to go?
@@ -19,6 +42,8 @@ export default function SearchBar() {
                         </label>
                         <input
                             id="location_input"
+                            value={location}
+                            onChange={ (e) => setLocation(e.target.value)}
                             className="search_form_input">
                         </input>
                     </div>
@@ -30,6 +55,8 @@ export default function SearchBar() {
                         </label>
                         <input
                             id="checkin_input"
+                            value={checkIn}
+                            onChange={ (e) => setCheckIn(e.target.value)}
                             className="search_form_input">
                         </input>
                     </div>
@@ -41,13 +68,14 @@ export default function SearchBar() {
                         </label>
                         <input
                             id="checkout_input"
+                            value={checkOut}
+                            onChange={ (e) => setCheckOut(e.target.value)}
                             className="search_form_input">
                         </input>
                     </div>
                     <div className="submit_wrapper">
                         <button
                             className="search_button">
-                            {/* Search */}
                         </button>
                     </div>
                 </form>

@@ -30,6 +30,10 @@ module.exports = (sequelize, DataTypes) => {
         len: [60, 60]
       },
     },
+    bio: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
   },
   {
     defaultScope: {
@@ -47,7 +51,10 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
   User.associate = function(models) {
-    // associations can be defined here
+    User.hasMany( models.Message, { foriegnKey: "toUserId" });
+    User.hasMany( models.Message, { foriegnKey: "fromUserId" });
+    User.hasMany( models.Listing, { foriegnKey: "hostId" });
+    User.hasMany( models.Booking, { foriegnKey: "bookerId" });
   };
   //returns an object with User Info that is safe to save in JWT
   User.prototype.toSafeObject = function () { // remember, this cannot be an arrow function

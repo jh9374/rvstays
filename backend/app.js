@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const { environment } = require('./config');
 const routes = require("./routes");
 const { ValidationError } = require("sequelize");
+const bodyParser = require('body-parser')
 
 //checking if environment is in production
 const isProduction = environment === 'production';
@@ -17,7 +18,9 @@ app.use(morgan('dev'));
 //Adding cookie-parser middleware for parsing cookies
 app.use(cookieParser());
 //Adding express.json middleware for parsing JSON bodies from request with Content-Type: 'application/json'
-app.use(express.json());
+// app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 //Allowing CORS in development only
 if(!isProduction){
     app.use(cors());

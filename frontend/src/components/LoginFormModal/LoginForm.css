@@ -55,8 +55,9 @@
 }
 
 .login_form_signup a{
+    font-size: 2em;
     color: #ffffff;
-    margin: 0 auto;
-    text-align: center;
-    padding: 0;
+    position: relative;
+    top: -1.8em;
+    left: 5em;
 }

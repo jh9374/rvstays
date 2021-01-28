@@ -13,6 +13,9 @@ function LoginFormModal() {
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <LoginForm />
+                    <div className="login_form_signup" onClick={() => setShowModal(false)}>
+                        <NavLink to="/signup">Need to sign up?</NavLink>
+                    </div>
                 </Modal>
             )}
         </>
