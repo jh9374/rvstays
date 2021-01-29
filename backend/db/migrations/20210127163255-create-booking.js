@@ -14,7 +14,7 @@ module.exports = {
         references: { model: "Listings" },
       },
       openings: {
-        type: Sequelize.DATEONLY,
+        type: Sequelize.RANGE(Sequelize.DATEONLY),
         allowNull: false,
       },
       bookerId: {

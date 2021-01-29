@@ -7,6 +7,7 @@ module.exports = {
       {
       hostId: 1,
       content: "Beautiful Airstream RV :)",
+      imageUrls: ["https://demobucket2112.s3.us-east-2.amazonaws.com/1611942164372.jpg","https://demobucket2112.s3.us-east-2.amazonaws.com/1611942164392.jpg"],
       dailyPrice: 40,
       city: "Charlotte",
       state: "NC",
@@ -15,6 +16,7 @@ module.exports = {
       {
         hostId: 2,
         content: "Beautiful Airstream near Disney!!! :)",
+        imageUrls: ["https://demobucket2112.s3.amazonaws.com/1611942650542.jpg"],
         dailyPrice: 650,
         city: "Orlando",
         state: "FL",
@@ -23,6 +25,7 @@ module.exports = {
       {
         hostId: 3,
         content: "Beautiful Tiffin RV :)",
+        imageUrls: ["https://demobucket2112.s3.us-east-2.amazonaws.com/1611943072926.png"],
         dailyPrice: 400,
         city: "Charlotte",
         state: "NC",

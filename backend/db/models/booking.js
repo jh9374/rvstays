@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    openings: {
-      type: DataTypes.DATEONLY,
+    bookings: {
+      type: DataTypes.DATERANGE(DataTypes.DATEONLY),
       allowNull: false,
     },
     bookerId: {
