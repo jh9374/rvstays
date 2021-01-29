@@ -24,10 +24,9 @@
     background-color: rgb(139, 139, 245);;
 }
 
-.listing_image{
-    background-image: url(../../images/rvstays_icon.001.png);
+.listing_image_anchor img{
     background-position: center;
-    background-size: 4em;
-    width: 4em;
+    background-size: 5em;
+    width: 5em;
     height: 100%;
 }

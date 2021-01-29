@@ -7,7 +7,8 @@ import Navigation from "./components/Navigation";
 import SearchBar from "./components/SearchBar";
 import Listings from "./components/Listings";
 import ProfilePage from "./components/ProfilePage";
-import CreateListing from "./components/CreateListing";
+import ListingPage from "./components/ListingPage"
+import CreateListingForm from "./components/CreateListing";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,14 +29,17 @@ function App() {
           <Route exact path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/listings">
+          <Route exact path="/listings">
             <Listings></Listings>
+          </Route>
+          <Route exact path="/listings/:id">
+            <ListingPage></ListingPage>
           </Route>
           <Route path="/profile">
             <ProfilePage />
           </Route>
           <Route path="/create-listing">
-            <CreateListing />
+            <CreateListingForm />
           </Route>
         </Switch>
       )}

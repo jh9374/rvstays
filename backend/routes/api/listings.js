@@ -20,28 +20,34 @@ router.get("/", async(req, res) => {
     res.json({ listings })
 })
 
+//Retrieving listings list for single user
+router.get("/user/:id", async (req, res) => {
+    const listings = await Listing.findAll({ where: { hostId: req.params.id } });
+    console.log("here are the listings", listings)
+    res.json({ listings })
+})
+
 //creating a listing with an image attached
 router.post(
-    "/listings",
-    singleMulterUpload("image"),
-    // validateSignup,
+    "/",
+    multipleMulterUpload("images"),
+    requireAuth,
     asyncHandler(async (req, res) => {
-        const { hostId, content, dailyPrice, city, state, zipcode } = req.body;
-        const imageUrl = await singlePublicFileUpload(req.file);
-        const user = await Listing.create({
-            hostId,
+        const images = await multiplePublicFileUpload(req.files);
+        const { content, dailyPrice, city, state, zipcode } = req.body;
+        console.log(state)
+        const listing = await Listing.create({
+            hostId:req.user.id,
             content,
+            imageUrls:images,
             dailyPrice,
             city,
             state,
             zipcode,
-            imageUrls: [imageUrl],
         });
 
-        setTokenCookie(res, user);
-
         return res.json({
-            user,
+            listing,
         });
     })
 );

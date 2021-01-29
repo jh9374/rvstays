@@ -1,6 +1,7 @@
 import "./Listings.css"
 import { useSelector } from "react-redux";
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import defaultImage from "../../images/rvstays_icon.001.png"
 
 export default function Listings() {
     let listings = useSelector(state => {
@@ -19,9 +20,22 @@ export default function Listings() {
                         <div className="listings_wrapper" key={l.id}>
                             <div className="listing_data_wrapper">
                                 <div className="listing_items">
-                                    <a href="/listings/id" className="listing_image_anchor">
-                                        <div className="listing_image"></div>
-                                    </a>
+                                    <NavLink to={`/listings/${l.id}`} className="listing_image_anchor" >
+                                        {l.imageUrls ?
+                                            l.imageUrls.length > 0 ?
+                                                (
+                                                    l.imageUrls.map((image, i) => {
+                                                        return(
+                                                            <img src={image} alt={`${l}, ${i + 1}`} key={image} />
+                                                              )
+                                                    })
+                                                )
+                                                
+                                                : (<img src={defaultImage} alt={`default`} />)
+
+                                                : (<img src={defaultImage} alt={`default`} />)
+                                        }
+                                    </NavLink>
                                 </div>
                                 <div className="listing_items">
                                     <span className="listing_content">{l.content}</span>

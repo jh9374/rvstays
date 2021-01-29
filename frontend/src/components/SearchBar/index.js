@@ -17,8 +17,8 @@ export default function SearchBar() {
         //set dispatch to retrieve listings based on location
         // and on availability
         // { location, checkIn, checkOut }
-        let res = await dispatch(getListings());
-        console.log(res)
+        await dispatch(getListings());
+        // console.log(res)
         // if(!location && !checkIn && !checkOut){
             return history.push("/listings")
         // }
@@ -58,7 +58,7 @@ export default function SearchBar() {
                         <input
                             id="checkin_input"
                             value={checkIn}
-                            placeholder="YYYY/MM/DD"
+                            type="date"
                             onChange={ (e) => setCheckIn(e.target.value)}
                             className="search_form_input">
                         </input>
@@ -72,7 +72,7 @@ export default function SearchBar() {
                         <input
                             id="checkout_input"
                             value={checkOut}
-                            placeholder="YYYY/MM/DD"
+                            type="date"
                             onChange={ (e) => setCheckOut(e.target.value)}
                             className="search_form_input">
                         </input>
