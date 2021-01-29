@@ -51,10 +51,12 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
   User.associate = function(models) {
-    User.hasMany( models.Message, { foriegnKey: "toUserId" });
-    User.hasMany( models.Message, { foriegnKey: "fromUserId" });
-    User.hasMany( models.Listing, { foriegnKey: "hostId" });
-    User.hasMany( models.Booking, { foriegnKey: "bookerId" });
+    User.hasMany( models.Message, { foreignKey: "toUserId" });
+    User.hasMany( models.Message, { foreignKey: "fromUserId" });
+    User.hasMany(models.Listing, { foreignKey: 'hostId' });
+    // User.hasMany( models.Listing, { foreignKey: "hostId" });
+    User.hasMany( models.Booking, { foreignKey: "bookerId" });
+    User.hasMany( models.Review, { foreignKey: "fromUserId" });
   };
   //returns an object with User Info that is safe to save in JWT
   User.prototype.toSafeObject = function () { // remember, this cannot be an arrow function

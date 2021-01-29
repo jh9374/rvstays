@@ -1,13 +1,16 @@
 import { fetch } from './csrf';
 
 //Setting up Reducer
-const initialState = { listings: null};
+const initialState = { listings: false};
 const listingsReducer = (state = initialState, action) => {
     let newState;
     switch (action.type) {
         case SET_LISTINGS:
-            // newState = Object.assign({}, state);
-            newState.listings = action.payload;
+            newState = Object.assign({});
+            let listings = action.payload.listings;
+            listings.forEach( listing =>{
+                newState[listing.id] = listing;
+            }) 
             return newState;
         default:
             return state;
@@ -24,12 +27,10 @@ const setListings = (listings) => {
     }
 }
 
-
 // Thunks
-
-export const getListings = () => async (dispatch) => {
+export const getListings = (userId) => async (dispatch) => {
     const res = await fetch('/api/listings');
-    console.log(res)
+    console.log(res.data)
     dispatch(setListings(res.data));
     return res;
 }

@@ -9,6 +9,18 @@ router.use('/users', usersRouter);
 
 router.use('/listings', listingsRouter)
 
+module.exports = router;
+
+
+
+
+
+
+
+
+
+
+// -------------------------- Testing code --------------------------
 // GET /api/set-token-cookie
 // const asyncHandler = require('express-async-handler');
 // const { setTokenCookie, restoreUser, requireAuth } = require('../../utils/auth.js');
@@ -46,5 +58,3 @@ router.use('/listings', listingsRouter)
 // router.post('/test', (req,res) => {
 //     res.json({ requestBody: req.body });
 // })
-
-module.exports = router;

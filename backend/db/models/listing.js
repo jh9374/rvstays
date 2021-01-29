@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Listing.associate = function(models) {
-    Listing.belongsTo( models.User, { foreignKey: 'id'});
+    Listing.belongsTo(models.User, { foreignKey: 'hostId' });
     Listing.hasMany( models.Booking, { foreignKey: "listingId" });
     Listing.hasMany( models.Review, { foreignKey: "toListingId" });
   };

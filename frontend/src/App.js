@@ -6,6 +6,8 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import SearchBar from "./components/SearchBar";
 import Listings from "./components/Listings";
+import ProfilePage from "./components/ProfilePage";
+import CreateListing from "./components/CreateListing";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +30,12 @@ function App() {
           </Route>
           <Route path="/listings">
             <Listings></Listings>
+          </Route>
+          <Route path="/profile">
+            <ProfilePage />
+          </Route>
+          <Route path="/create-listing">
+            <CreateListing />
           </Route>
         </Switch>
       )}

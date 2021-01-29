@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "reseed": "npx dotenv sequelize db:drop && npx dotenv sequelize db:create && npx dotenv sequelize db:migrate && npx dotenv sequelize db:seed:all",
     "test": "echo \"Error: no test specified\" && exit 1",
     "sequelize": "sequelize",
     "sequelize-cli": "sequelize-cli",

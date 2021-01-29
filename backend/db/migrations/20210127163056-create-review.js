@@ -11,7 +11,7 @@ module.exports = {
       toListingId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: "Users"}
+        references: { model: "Listings"}
       },
       fromUserId: {
         type: Sequelize.INTEGER,

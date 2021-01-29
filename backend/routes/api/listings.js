@@ -2,7 +2,7 @@ const express = require('express')
 const asyncHandler = require('express-async-handler');
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { Listing } = require('../../db/models');
+const { Listing, User, Review, Message } = require('../../db/models');
 
 const {
     singleMulterUpload,
@@ -13,27 +13,29 @@ const {
 
 const router = require('./users');
 
-
-
-router.get("/listings", async(req, res) => {
+//Retrieving listings list
+router.get("/", async(req, res) => {
     const listings = await Listing.findAll();
-    console.log("here is the listings", listings)
-    res.json({listings})
+    console.log("here are the listings", listings)
+    res.json({ listings })
 })
 
-//uploading image
+//creating a listing with an image attached
 router.post(
     "/listings",
     singleMulterUpload("image"),
     // validateSignup,
     asyncHandler(async (req, res) => {
-        const { email, password, username } = req.body;
+        const { hostId, content, dailyPrice, city, state, zipcode } = req.body;
         const imageUrl = await singlePublicFileUpload(req.file);
-        const user = await User.signup({
-            username,
-            email,
-            password,
-            imageUrls: imageUrl,
+        const user = await Listing.create({
+            hostId,
+            content,
+            dailyPrice,
+            city,
+            state,
+            zipcode,
+            imageUrls: [imageUrl],
         });
 
         setTokenCookie(res, user);

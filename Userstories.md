@@ -1,12 +1,12 @@
 # Steps to complete project
 
 ## Database
-1. setup Listings migrations and model
-2. setup initial seeder file for 10 listings
-3. setup Bookings migration and model
-4. setup initial seeder file for 5 hosts
-5. setup Reviews migration and model
-6. setup Reviews seeder file for 2 listings
+1. [x] setup Listings migrations and model
+2. [x] setup initial seeder file for 10 listings
+3. [x] setup Bookings migration and model
+4. [x] setup initial seeder file for 5 hosts
+5. [x] setup Reviews migration and model
+6. [x] setup Reviews seeder file for 2 listings
 
 ## Listings
 Will be a seperate page with basically a list of divs of listings

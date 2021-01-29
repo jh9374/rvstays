@@ -3,3 +3,31 @@
     text-align: center;
     font-size: 4em;
 }
+
+.listings_wrapper{
+    font-size: 2em;
+}
+
+.listing_data_wrapper{
+    height: 15vh;
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    border: solid;
+}
+
+.listing_items{
+    margin: 1em auto;
+}
+
+.listing_items * {
+    background-color: rgb(139, 139, 245);;
+}
+
+.listing_image{
+    background-image: url(../../images/rvstays_icon.001.png);
+    background-position: center;
+    background-size: 4em;
+    width: 4em;
+    height: 100%;
+}
