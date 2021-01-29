@@ -1,6 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 export default function ProfilePage() {
+    const sessionUser = useSelector(state => state.session.user);
+    if (!sessionUser) return <Redirect to="/" />;
     return (
         <>
             {document.getElementById("root").classList.remove("hero-wrapper")}
