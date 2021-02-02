@@ -16,14 +16,27 @@ const router = require('./users');
 //Retrieving listings list
 router.get("/", async(req, res) => {
     const listings = await Listing.findAll();
-    console.log("here are the listings", listings)
+    // console.log("here are the listings", listings)
     res.json({ listings })
+})
+
+//Delete a listing
+router.delete("/delete/:id", async (req, res) => {
+    let id = req.params.id;
+    console.log(req.params.id)
+    const listing = await Listing.destroy({
+        where: {
+            id: req.params.id
+        }
+    });
+    console.log("This listing was removed", listing)
+    res.json({ listing })
 })
 
 //Retrieving listings list for single user
 router.get("/user/:id", async (req, res) => {
     const listings = await Listing.findAll({ where: { hostId: req.params.id } });
-    console.log("here are the listings", listings)
+    // console.log("here are the listings", listings)
     res.json({ listings })
 })
 

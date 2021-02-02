@@ -6,17 +6,25 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     bookings: {
-      type: DataTypes.DATERANGE(DataTypes.DATEONLY),
+      type: DataTypes.RANGE(DataTypes.DATEONLY),
       allowNull: false,
     },
     bookerId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     }
-  }, {});
+  }, {
+      indexes: [
+        {
+          fields: ['availability'],
+          using: 'gist',
+          // operator: '',
+        },
+      ]
+  });
   Booking.associate = function(models) {
-    Booking.belongsTo( models.User );
-    Booking.belongsTo( models.Listing );
+    Booking.belongsTo( models.User, { foreignKey: "bookerId" });
+    Booking.belongsTo( models.Listing, { foreignKey: "listingId" });
   };
   return Booking;
 };

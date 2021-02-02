@@ -1,0 +1,41 @@
+
+.listing_page_wrapper{
+    width: 80%;
+    margin: 0 auto;
+    
+}
+
+.listing_page_contents{
+    border: solid;
+    background-color: #ebebeb;
+    height: 100vh;
+}
+
+.listing_page_heading{
+    text-align: center;
+    margin: 2% 0;
+}
+
+.listing_page_image{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.listing_page_image img{
+    /* justify-content: center; */
+    padding: 0 2%;
+    width: 40em;
+}
+
+.listing_page_details{
+    display: flex;
+    margin: 2% auto;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.booking_form {
+    margin: 0 auto;
+}

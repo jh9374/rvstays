@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { createListing } from "../../store/listings"
+import "./CreateListing.css"
 
 export default function CreateListingForm() {
     const dispatch = useDispatch();
-    const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
     const [content, setContent] = useState('');
     const [images, setImages] = useState([]);
@@ -49,26 +49,26 @@ export default function CreateListingForm() {
                 </div>
                 <div className="createListing_form_wrapper">
                     <form className="createListing_form" onSubmit={handleSubmit}>
-                        <div className="input_wrapper">
+                        <div className="create_listing_input_wrapper">
                             <label
                                 className="createListing_form_label"
                                 htmlFor="createListing_content"
                             >Description
-                            <input
+                            <textarea
                                     id="createListing_content"
                                     value={content}
                                     placeholder="Description of RV"
                                     className="createListing_form_input"
                                     onChange={e => setContent(e.target.value)}
                                 >
-                                </input>
+                                </textarea>
                             </label>
                         </div>
-                        <div className="input_wrapper">
+                        <div className="create_listing_input_wrapper">
                             <label
                                 className="createListing_form_label"
                                 htmlFor="createListing_Images"
-                            >Description
+                            >Images
                             <input
                                     id="createListing_Images"
                                     type="file"
@@ -79,7 +79,7 @@ export default function CreateListingForm() {
                                 </input>
                             </label>
                         </div>
-                        <div className="input_wrapper">
+                        <div className="create_listing_input_wrapper">
                             <label
                                 className="createListing_form_label"
                                 htmlFor="createListing_dailyPrice"
@@ -95,7 +95,7 @@ export default function CreateListingForm() {
                                 </input>
                             </label>
                         </div>
-                        <div className="input_wrapper">
+                        <div className="create_listing_input_wrapper">
                             <label
                                 className="createListing_form_label"
                                 htmlFor="createListing_city"
@@ -110,7 +110,7 @@ export default function CreateListingForm() {
                                 </input>
                             </label>
                         </div>
-                        <div className="input_wrapper">
+                        <div className="create_listing_input_wrapper">
                             <label
                                 className="createListing_form_label"
                                 htmlFor="createListing_stateLocation"
@@ -125,7 +125,7 @@ export default function CreateListingForm() {
                                 </input>
                             </label>
                         </div>
-                        <div className="input_wrapper">
+                        <div className="create_listing_input_wrapper">
                             <label
                                 className="createListing_form_label"
                                 htmlFor="createListing_zipcode"

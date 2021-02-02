@@ -11,7 +11,9 @@ module.exports = {
       toListingId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: "Listings"}
+        references: { model: "Listings"},
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
       fromUserId: {
         type: Sequelize.INTEGER,

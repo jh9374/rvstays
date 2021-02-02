@@ -1,0 +1,48 @@
+.createListing_wrapper{
+    /* background-color: rgb(38, 60, 106); */
+    width: 35em;
+    margin: 2% auto;
+    /* color: #ffffff; */
+    border: solid;
+}
+.createListing_wrapper *{
+    margin: 0 auto;
+}
+
+.createListing_wrapper h1{
+    padding-top: 3%;
+    text-align: center;
+}
+
+.createListing_form{
+    font-size: 2em;
+    width: 100%;
+    height: 100%;
+    /* color: #ffffff; */
+}
+
+.createListing_form *{
+    padding: .5em 0;
+    box-sizing: border-box;
+}
+
+.create_listing_input_wrapper{
+    width: 100%;
+    display: inline-block;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.createListing_form_input{
+    width: 60%;
+    float: right;
+}
+
+.createListing_submit{
+    text-align: center;
+    font-size: .8em;
+}
+
+#createListing_content{
+    font-family: sans-serif;
+}

@@ -54,7 +54,7 @@ const setUserListings = (listing) => {
 
 // Thunks
 export const getListings = (userId) => async (dispatch) => {
-    console.log("user id", userId)
+    // console.log("user id", userId)
     if(userId){
         const res = await fetch(`/api/listings/user/${userId}`);
         // console.log(res.data)
@@ -67,7 +67,41 @@ export const getListings = (userId) => async (dispatch) => {
     return res;
 }
 
+export const deleteListing = (listingId) => async (dispatch) => {
+    const res = await fetch(`/api/listings/delete/${listingId}`, {
+        method: "DELETE"
+    });
+    return res;
+}
+
 export const createListing = (listing) => async (dispatch) => {
+    const { content, images, dailyPrice, city, stateLocation, zipcode } = listing;
+    const formData = new FormData();
+  
+    formData.append("content", content);
+    formData.append("dailyPrice", dailyPrice);
+    formData.append("city", city);
+    formData.append("state", stateLocation);
+    formData.append("zipcode", zipcode);
+
+    // for multiple files
+    if (images && images.length !== 0) {
+        for (var i = 0; i < images.length; i++) {
+            formData.append("images", images[i]);
+        }
+    }
+
+    const res = await fetch(`/api/listings/`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "multipart/form-data",
+        },
+        body: formData,
+    });
+    console.log(res.data)
+    // dispatch(setListing(res.data.listing));
+}
+export const updateListing = (listing) => async (dispatch) => {
     const { content, images, dailyPrice, city, stateLocation, zipcode } = listing;
     const formData = new FormData();
   

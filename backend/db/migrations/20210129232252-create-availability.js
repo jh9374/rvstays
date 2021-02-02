@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Bookings', {
+    return queryInterface.createTable('Availabilities', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -15,28 +15,21 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      openings: {
+      availability: {
         type: Sequelize.RANGE(Sequelize.DATEONLY),
         allowNull: false,
       },
-      bookerId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: { model: "Users" },
-      },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('now'),
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('now'),
-      }
+        type: Sequelize.DATE
+      },
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Bookings');
+    return queryInterface.dropTable('Availabilities');
   }
 };

@@ -9,7 +9,7 @@
 }
 
 .listing_data_wrapper{
-    height: 15vh;
+    height: fit-content;
     display: flex;
     margin: 0 auto;
     width: 80%;
@@ -18,15 +18,94 @@
 
 .listing_items{
     margin: 1em auto;
+    box-sizing: border-box;
 }
 
-.listing_items * {
-    background-color: rgb(139, 139, 245);;
+.listing_image_anchor{
+    width: 8em;
+    
 }
 
 .listing_image_anchor img{
     background-position: center;
     background-size: 5em;
-    width: 5em;
-    height: 100%;
+    width: 100%;
+    height: 6em;
+}
+
+.image_div{
+    width: fit-content;
+    margin: 1em 3em 1em 5em;
+}
+
+.content_div, .main_content_div{
+    margin: 1em 2%;
+    width: 60%;
+    padding-top: 1em;
+}
+
+.price_div, .main_price_div{
+    padding-top: 1em;
+    /* margin-right: 1%; */
+}
+
+.listings_buttons_wrapper{
+    width: 4em;
+}
+
+.listings_buttons{
+    display: block;
+    margin: 50% 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.dashboard_heading{
+    text-align: center;
+    font-size: 3em;
+}
+
+.listings_heading{
+    text-align: center;
+    font-size: 2em;
+}
+
+
+.create_listing_link{
+    margin: .5em 0;
+    text-align: center;
+    font-size: 1.5em;
+    display: block;
+    float: right;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 6em;
+}
+
+.create_listing_button_wrapper{
+    width: 80%;
+    margin: 0 auto;
+    height: 4em;
+}
+
+.create_listing_link:visited{
+    color: initial;
+    text-decoration: none;
+}
+
+.create_listing_link:hover, .listings_update:hover, .listings_delete:hover{
+    background-color: rgb(80, 79, 79);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* main listings styling */
+
+.main_image_div{
+    width: 8em;
+    margin: 1em 3em 1em 5em;
+}
+
+.main_price_div{
+    margin-right: 5em;
 }
